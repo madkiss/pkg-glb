@@ -33,9 +33,9 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_triplet = x86_64-unknown-linux-gnu
-host_triplet = x86_64-unknown-linux-gnu
-target_triplet = x86_64-unknown-linux-gnu
+build_triplet = x86_64-pc-linux-gnu
+host_triplet = x86_64-pc-linux-gnu
+target_triplet = x86_64-pc-linux-gnu
 sbin_PROGRAMS = glbd$(EXEEXT)
 subdir = src
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
@@ -68,20 +68,20 @@ DIST_SOURCES = $(glbd_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/oc/Documents/Builds/glb-0.7.3/missing --run aclocal-1.10
-AMTAR = ${SHELL} /home/oc/Documents/Builds/glb-0.7.3/missing --run tar
-AUTOCONF = ${SHELL} /home/oc/Documents/Builds/glb-0.7.3/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/oc/Documents/Builds/glb-0.7.3/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/oc/Documents/Builds/glb-0.7.3/missing --run automake-1.10
+ACLOCAL = ${SHELL} /home/oc/pkg-glb/missing --run aclocal-1.10
+AMTAR = ${SHELL} /home/oc/pkg-glb/missing --run tar
+AUTOCONF = ${SHELL} /home/oc/pkg-glb/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/oc/pkg-glb/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/oc/pkg-glb/missing --run automake-1.10
 AWK = gawk
 CC = gcc
-CCDEPMODE = depmode=gcc3
-CFLAGS =  -O3 -mtune=i686  -DNDEBUG  -Werror -DUSE_EPOLL 
+CCDEPMODE = depmode=none
+CFLAGS = -g -O2 -g -Wall -O2 -DNDEBUG  -Wall -DUSE_EPOLL 
 CPP = gcc -E
 CPPFLAGS = 
 CXX = g++
-CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2
+CXXDEPMODE = depmode=none
+CXXFLAGS = -g -O2 -g -Wall -O2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -96,11 +96,11 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LDFLAGS = 
+LDFLAGS = -Wl,-Bsymbolic-functions
 LIBOBJS = 
 LIBS = -lpthread 
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/oc/Documents/Builds/glb-0.7.3/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/oc/pkg-glb/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 OBJEXT = o
 PACKAGE = glb
@@ -114,10 +114,10 @@ SET_MAKE =
 SHELL = /bin/bash
 STRIP = 
 VERSION = 0.7.3
-abs_builddir = /home/oc/Documents/Builds/glb-0.7.3/src
-abs_srcdir = /home/oc/Documents/Builds/glb-0.7.3/src
-abs_top_builddir = /home/oc/Documents/Builds/glb-0.7.3
-abs_top_srcdir = /home/oc/Documents/Builds/glb-0.7.3
+abs_builddir = /home/oc/pkg-glb/src
+abs_srcdir = /home/oc/pkg-glb/src
+abs_top_builddir = /home/oc/pkg-glb
+abs_top_srcdir = /home/oc/pkg-glb
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 am__include = include
@@ -126,46 +126,46 @@ am__quote =
 am__tar = ${AMTAR} chof - "$$tardir"
 am__untar = ${AMTAR} xf -
 bindir = ${exec_prefix}/bin
-build = x86_64-unknown-linux-gnu
-build_alias = 
+build = x86_64-pc-linux-gnu
+build_alias = x86_64-linux-gnu
 build_cpu = x86_64
 build_os = linux-gnu
-build_vendor = unknown
+build_vendor = pc
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-unknown-linux-gnu
+host = x86_64-pc-linux-gnu
 host_alias = 
 host_cpu = x86_64
 host_os = linux-gnu
-host_vendor = unknown
+host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
-infodir = ${datarootdir}/info
-install_sh = $(SHELL) /home/oc/Documents/Builds/glb-0.7.3/install-sh
+infodir = ${prefix}/share/info
+install_sh = $(SHELL) /home/oc/pkg-glb/install-sh
 libdir = ${exec_prefix}/lib
-libexecdir = ${exec_prefix}/libexec
+libexecdir = ${prefix}/lib/glb
 localedir = ${datarootdir}/locale
-localstatedir = ${prefix}/var
-mandir = ${datarootdir}/man
+localstatedir = /var
+mandir = ${prefix}/share/man
 mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /usr/local
+prefix = /usr
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
 srcdir = .
-sysconfdir = ${prefix}/etc
-target = x86_64-unknown-linux-gnu
+sysconfdir = /etc
+target = x86_64-pc-linux-gnu
 target_alias = 
 target_cpu = x86_64
 target_os = linux-gnu
-target_vendor = unknown
+target_vendor = pc
 top_builddir = ..
 top_srcdir = ..
 glbd_SOURCES = \
@@ -248,31 +248,31 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/glb_cmd.Po
-include ./$(DEPDIR)/glb_control.Po
-include ./$(DEPDIR)/glb_daemon.Po
-include ./$(DEPDIR)/glb_dst.Po
-include ./$(DEPDIR)/glb_listener.Po
-include ./$(DEPDIR)/glb_log.Po
-include ./$(DEPDIR)/glb_main.Po
-include ./$(DEPDIR)/glb_pool.Po
-include ./$(DEPDIR)/glb_router.Po
-include ./$(DEPDIR)/glb_signal.Po
-include ./$(DEPDIR)/glb_socket.Po
+#include ./$(DEPDIR)/glb_cmd.Po
+#include ./$(DEPDIR)/glb_control.Po
+#include ./$(DEPDIR)/glb_daemon.Po
+#include ./$(DEPDIR)/glb_dst.Po
+#include ./$(DEPDIR)/glb_listener.Po
+#include ./$(DEPDIR)/glb_log.Po
+#include ./$(DEPDIR)/glb_main.Po
+#include ./$(DEPDIR)/glb_pool.Po
+#include ./$(DEPDIR)/glb_router.Po
+#include ./$(DEPDIR)/glb_signal.Po
+#include ./$(DEPDIR)/glb_socket.Po
 
 .c.o:
-	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	mv -f $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(COMPILE) -c $<
+#	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+#	mv -f $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	source='$<' object='$@' libtool=no 
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
+	$(COMPILE) -c $<
 
 .c.obj:
-	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-	mv -f $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-#	source='$<' object='$@' libtool=no \
-#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(COMPILE) -c `$(CYGPATH_W) '$<'`
+#	$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+#	mv -f $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+#	source='$<' object='$@' libtool=no 
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) 
+	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
 	list='$(SOURCES) $(HEADERS) $(LISP) $(TAGS_FILES)'; \
