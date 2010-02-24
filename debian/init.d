@@ -5,18 +5,15 @@
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Example initscript
-# Description:       This file should be used to construct scripts to be
-#                    placed in /etc/init.d.
+# Short-Description: Initscript for GLB daemon
 ### END INIT INFO
 
 # Author: Vladimir Osintsev <osintsev@gmail.com>
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-DESC="Description of the service"
+DESC="Galera Load Balancer daemon"
 NAME=glbd
 DAEMON=/usr/sbin/$NAME
-DAEMON_ARGS="127.0.0.1:3128"
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/glb
 
@@ -25,6 +22,8 @@ SCRIPTNAME=/etc/init.d/glb
 
 # Read configuration variable file if it is present
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
+
+DAEMON_ARGS="$DAEMON_OPTS $LISTEN_ADDRESS $DESTINATION_LIST"
 
 # Load the VERBOSE setting and other rcS variables
 . /lib/init/vars.sh
