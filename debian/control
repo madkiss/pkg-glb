@@ -10,7 +10,7 @@ Homepage: http://www.codership.com/en/products/galera-load-balancer
 
 Package: glb
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, lsb-base (>= 3.0-6)
 Description: simple TCP connection load balancer
  GLB (Galera Load Balancer) is a simple TCP connection balancer made with 
  scalability and performance in mind. It was inspired by pen, but unlike pen its
