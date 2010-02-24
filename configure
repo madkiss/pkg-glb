@@ -6819,7 +6819,7 @@ fi
 
 # Many feature checks are broken and issue warnings.
 # If we want checks to pass we have to put this at the very end.
-CFLAGS="$CFLAGS -Wall -DUSE_$POLL "
+CFLAGS="$CFLAGS -Wall -Werror -DUSE_$POLL "
 
 #CXXFLAGS="$CFLAGS $CXXFLAGS"
 #AC_SUBST(CXXFLAGS)
