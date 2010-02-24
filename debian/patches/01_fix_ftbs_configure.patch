@@ -1,0 +1,11 @@
+--- configure.orig	2009-12-27 03:26:52.291903805 +0300
++++ configure	2009-12-27 03:27:46.881903724 +0300
+@@ -6819,7 +6819,7 @@
+ 
+ # Many feature checks are broken and issue warnings.
+ # If we want checks to pass we have to put this at the very end.
+-CFLAGS="$CFLAGS -Wall -Werror -DUSE_$POLL "
++CFLAGS="$CFLAGS -Wall -DUSE_$POLL "
+ 
+ #CXXFLAGS="$CFLAGS $CXXFLAGS"
+ #AC_SUBST(CXXFLAGS)

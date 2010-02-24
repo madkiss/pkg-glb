@@ -1,0 +1,5 @@
+glb (0.7.3-1) unstable; urgency=low
+
+  * Initial release (Closes: #562666)
+
+ -- Vladimir Osintsev <osintsev@gmail.com>  Thu, 24 Dec 2009 22:49:11 +0300
