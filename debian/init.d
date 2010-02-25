@@ -21,9 +21,9 @@ SCRIPTNAME=/etc/init.d/glb
 [ -x "$DAEMON" ] || exit 0
 
 # Read configuration variable file if it is present
-[ -r /etc/default/$NAME ] && . /etc/default/$NAME
+[ -r /etc/default/glb ] && . /etc/default/glb
 
-DAEMON_ARGS="$DAEMON_OPTS $LISTEN_ADDRESS $DESTINATION_LIST"
+DAEMON_ARGS="$DAEMON_OPTS --threads $THREADS_NUM --control $CONTROL_ADDRESS $LISTEN_ADDRESS $DESTINATION_LIST"
 
 # Load the VERBOSE setting and other rcS variables
 . /lib/init/vars.sh

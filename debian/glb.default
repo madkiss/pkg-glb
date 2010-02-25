@@ -8,6 +8,14 @@
 
 # Additional options that are passed to the Daemon.
 DAEMON_OPTS=""
-LISTEN_ADDRESS="127.0.0.1:3128"
+
+# Listen for control requests on this address
+CONTROL_ADDRESS=127.0.0.1:8081
+# Commonly 1-2 thread per CPU
+THREADS_NUM=2
+
+# Listen on
+LISTEN_ADDRESS="127.0.0.1:8080"
+ 
 # Disabled by default (also can be configured in runtime)
-#DESTINATION_LIST="example.com:80"
+#DESTINATION_LIST="example1.com:80 example2.com:80"
