@@ -25,6 +25,11 @@ SCRIPTNAME=/etc/init.d/glb
 
 DAEMON_ARGS="$DAEMON_OPTS --threads $THREADS_NUM --control $CONTROL_ADDRESS $LISTEN_ADDRESS $DESTINATION_LIST"
 
+if [ ! "x$START_DAEMON" = "xyes" -a ! "$1" = "stop" ]; then
+	echo "Edit /etc/default/jackd to start jackd"
+	exit 0
+fi
+
 # Load the VERBOSE setting and other rcS variables
 . /lib/init/vars.sh
 

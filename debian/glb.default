@@ -6,6 +6,9 @@
 # This is a POSIX shell fragment
 #
 
+# Set to "yes" to start glb at boot
+START_DAEMON=no
+
 # Additional options that are passed to the Daemon.
 DAEMON_OPTS=""
 
