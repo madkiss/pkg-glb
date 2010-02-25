@@ -2,7 +2,7 @@ Source: glb
 Section: net
 Priority: optional
 Maintainer: Vladimir Osintsev <osintsev@gmail.com>
-Build-Depends: debhelper (>= 7), patchutils, cdbs, autotools-dev
+Build-Depends: debhelper (>= 7), cdbs
 Standards-Version: 3.8.4
 Vcs-Browser: http://github.com/osminogin/pkg-glb
 Vcs-Git: git://github.com/osminogin/pkg-glb.git
@@ -11,7 +11,7 @@ Homepage: http://www.codership.com/en/products/galera-load-balancer
 Package: glb
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, lsb-base (>= 3.0-6)
-Description: simple TCP connection load balancer
+Description: simple and efficient TCP connection load balancer
  GLB (Galera Load Balancer) is a simple TCP connection balancer made with 
  scalability and performance in mind. It was inspired by pen, but unlike pen its
  functionality is limited only to balancing generic TCP connections.
